@@ -23,8 +23,18 @@ public class Day1_recursion {
 		return ans;
 	}
 	
+	public static double getSumOfGP(int k) {
+		if(k==0) {
+			return 1;
+		}
+		double ans = 1/Math.pow(2, k);
+		ans+=getSumOfGP(k-1);
+		return ans;
+	}
+	
 	public static void main(String[] args) {
 		System.out.println(getMultiplicationofTwoNos(50, 76));
 		System.out.println(countNumberOfZerosInNumber("0000090910910909182901"));
+		System.out.println(getSumOfGP(5));
 	}
 }
