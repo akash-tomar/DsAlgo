@@ -42,13 +42,33 @@ public class Day1_recursion {
 			return isPallindrome(str.substring(1, str.length()-1));
 		} else {
 			return false;
-		}
-		
+		}	
 	}
+	
+	public static String changePiToNum(String str) {
+		if(str.length()==1) {
+			return str;
+		}
+		String ans;
+		if(str.charAt(0)=='p' && str.charAt(1)=='i') {
+			ans = "3.14";
+			if(str.length()>2) {
+				ans+=changePiToNum(str.substring(2, str.length()));
+			}
+		} else {
+			ans = str.charAt(0)+"";
+			if(str.length()>1) {
+				ans += changePiToNum(str.substring(1,str.length()));
+			}
+		}
+		return ans;
+	}
+	
 	public static void main(String[] args) {
 		System.out.println(getMultiplicationofTwoNos(50, 76));
 		System.out.println(countNumberOfZerosInNumber("0000090910910909182901"));
 		System.out.println(getSumOfGP(5));
 		System.out.println(isPallindrome("hannah"));
+		System.out.println(changePiToNum("pipikjbDKJbpijbjpipip"));
 	}
 }
