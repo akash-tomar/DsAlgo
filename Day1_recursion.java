@@ -31,10 +31,24 @@ public class Day1_recursion {
 		ans+=getSumOfGP(k-1);
 		return ans;
 	}
-	
+	public static boolean isPallindrome(String str) {
+		if(str.length()==1) {
+			return true;
+		} else if(str.length()==0) {
+			return true;
+		}
+		
+		if(str.charAt(0)==str.charAt(str.length()-1)) {
+			return isPallindrome(str.substring(1, str.length()-1));
+		} else {
+			return false;
+		}
+		
+	}
 	public static void main(String[] args) {
 		System.out.println(getMultiplicationofTwoNos(50, 76));
 		System.out.println(countNumberOfZerosInNumber("0000090910910909182901"));
 		System.out.println(getSumOfGP(5));
+		System.out.println(isPallindrome("hannah"));
 	}
 }
