@@ -101,16 +101,27 @@ public class Day1_arrays {
 		}
 		printArray(arr);
 	}
+	
+	public static int getMultiplicationofTwoNos(int a,int b) {
+		if(b==1) {
+			return a;
+		}
+		
+		int ans = getMultiplicationofTwoNos(a, b-1);
+		ans += a;
+		return ans;
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] arr = {2,1,0};
+//		int[] arr = {2,1,0};
 //		printArray(pushAllZerosToEnd(arr));
 //		System.out.println();
 //		System.out.println(getKInClockwiseRotatedArray(arr));
 //		getSortedArrayInOneScan(arr);
 //		printArray(arr);
-		getSortedArrayOfZeroOneTwo(arr);
+//		getSortedArrayOfZeroOneTwo(arr);
+		System.out.println(getMultiplicationofTwoNos(50, 76));
 	}
 
 }
